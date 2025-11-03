@@ -2,6 +2,17 @@
 #include "features.h"
 #include "Instances.hpp"
 
+FString CharToFString(const char* str)
+{
+	int len = MultiByteToWideChar(CP_UTF8, 0, str, -1, NULL, 0);
+	if (len == 0) return FString();
+	wchar_t* wstr = new wchar_t[len];
+	MultiByteToWideChar(CP_UTF8, 0, str, -1, wstr, len);
+	FString fstr(wstr);
+	delete[] wstr;
+	return fstr;
+}
+
 ABPCharacter_Demo_C* Features::GetPawn()
 {
 	APawn* pawn = Instances::GetLocalPawn();
@@ -10,6 +21,22 @@ ABPCharacter_Demo_C* Features::GetPawn()
 		return static_cast<ABPCharacter_Demo_C*>(pawn);
 	}
 	return nullptr;
+}
+
+void Features::OnPawnChange(ABPCharacter_Demo_C* newPawn) //basically if (new_level) pawnreset so we update the features state
+{
+	if (newPawn == g_lastKnownPawn)
+		return;
+
+	g_lastKnownPawn = newPawn;
+
+	if (!newPawn)
+		return;
+
+	g_lastStaminaState = !g_infiniteStaminaEnabled;
+
+	g_originalSpeedSaved = false;
+	g_lastSpeedHackState = !g_speedHackEnabled;
 }
 
 template<typename T>
@@ -55,6 +82,20 @@ void Features::ItemSpawner(int selectedItemIndex, int spawnCount)
 	case 6: SpawnItemByType<ABP_Liquid_Pain_C>(PlayerCharacter, spawnCount); break;
 	case 7: SpawnItemByType<ABP_Item_Knife_C>(PlayerCharacter, spawnCount); break;
 	case 8: SpawnItemByType<ABP_Item_Crowbar_C>(PlayerCharacter, spawnCount); break;
+	case 9: SpawnItemByType<ABP_FlareGun_C>(PlayerCharacter, spawnCount); break;
+	case 10: SpawnItemByType<ABP_MothJelly_C>(PlayerCharacter, spawnCount); break;
+	case 11: SpawnItemByType<ABP_Rope_C>(PlayerCharacter, spawnCount); break;
+	case 12: SpawnItemByType<ABP_Item_AlmondBottle_C>(PlayerCharacter, spawnCount); break;
+	case 13: SpawnItemByType<ABP_Item_Firework_C>(PlayerCharacter, spawnCount); break;
+	case 14: SpawnItemByType<ABP_Item_Ticket_C>(PlayerCharacter, spawnCount); break;
+	case 15: SpawnItemByType<ABP_Diving_Helmet_C>(PlayerCharacter, spawnCount); break;
+	case 16: SpawnItemByType<ABP_Item_Camera_C>(PlayerCharacter, spawnCount); break;
+	case 17: SpawnItemByType<ABP_Item_Glowstick_Red_C>(PlayerCharacter, spawnCount); break;
+	case 18: SpawnItemByType<ABP_Item_Glowstick_Blue_C>(PlayerCharacter, spawnCount); break;
+	case 19: SpawnItemByType<ABP_Item_Glowstick_Yellow_C>(PlayerCharacter, spawnCount); break;
+	case 20: SpawnItemByType<ABP_Thermometer_C>(PlayerCharacter, spawnCount); break;
+	case 21: SpawnItemByType<ABP_WalkieTalkie_C>(PlayerCharacter, spawnCount); break;
+	case 22: SpawnItemByType<ABP_DroppedItem_LiDAR_C>(PlayerCharacter, spawnCount); break;
 	}
 }
 
@@ -286,5 +327,24 @@ void Features::PlayerFly(ABPCharacter_Demo_C* PlayerCharacter)
 			MovementComponent->BrakingDecelerationFlying = 0.f;
 			MovementComponent->StopMovementImmediately();
 		}
+	}
+}
+
+void Features::ChatSpammer()
+{
+	if (!g_chatSpammerEnabled)
+	{
+		return;
+	}
+
+	static ULONGLONG next_spam_tick = 0;
+	ULONGLONG current_tick = GetTickCount64();
+
+	if (current_tick >= next_spam_tick)
+	{
+		UWB_Chat_C* chatWidget = Instances::GetInstanceOf<UWB_Chat_C>();
+		if (chatWidget)
+			chatWidget->Send_Global_Message(CharToFString(g_chatSpamMessage));
+		next_spam_tick = current_tick + g_chatSpamDelay;
 	}
 }

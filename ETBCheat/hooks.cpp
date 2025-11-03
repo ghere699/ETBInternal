@@ -336,8 +336,7 @@ void Hooks::hkProcessEvent(SDK::UObject* pThis, SDK::UFunction* Function, void* 
 
 
 		/*
-		if ((lowerFunctionName.find("actor") != std::string::npos || lowerFunctionName.find("monster") != std::string::npos || lowerFunctionName.find("skinstealer") != std::string::npos)
-			&& (lowerFunctionName != "function engine.actorcomponent.receivetick"))
+		if (lowerFunctionName.find("chat") != std::string::npos)
 		{
 			std::cout << "[ProcessEvent] -> " << functionName << std::endl;
 		}
@@ -348,6 +347,7 @@ void Hooks::hkProcessEvent(SDK::UObject* pThis, SDK::UFunction* Function, void* 
 			Instances::Update();
 
 			ABPCharacter_Demo_C* pLocalPlayer = Features::GetPawn();
+			Features::OnPawnChange(pLocalPlayer);
 			if (pLocalPlayer)
 			{
 				Features::SpeedChanger(pLocalPlayer);
@@ -366,6 +366,7 @@ void Hooks::hkProcessEvent(SDK::UObject* pThis, SDK::UFunction* Function, void* 
 			{
 				Features::PlayerFly(pLocalPlayer);
 			}
+			Features::ChatSpammer();
 		}
 
 	}
