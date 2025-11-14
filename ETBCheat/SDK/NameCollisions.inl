@@ -15,9 +15,9 @@ namespace ClimbSequence { class USequenceDirector_C; }
 
 namespace PlayerEQSQuery { class UPlayerEQSQuery_C; }
 
-namespace PlayerEQSQuery_0 { class UPlayerEQSQuery_C; }
-
 namespace WaterExit { class USequenceDirector_C; }
+
+namespace PlayerEQSQuery_0 { class UPlayerEQSQuery_C; }
 
 namespace GrabKeySequence_TPP { class USequenceDirector_C; }
 

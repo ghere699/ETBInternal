@@ -29,7 +29,7 @@ void NoClip::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 EntryP
 	if (Func == nullptr)
 		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::NoClip_SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector_NoClip Parms{};
 
 	Parms.EntryPoint = EntryPoint;
 

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "EN_ItemRarity_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
 
 

@@ -16,7 +16,7 @@ namespace SDK::Params
 
 // Function BTDecorator_ShouldMove.BTDecorator_ShouldMove_C.PerformConditionCheckAI
 // 0x0028 (0x0028 - 0x0000)
-struct BTDecorator_ShouldMove_BTDecorator_ShouldMove_C_PerformConditionCheckAI final
+struct BTDecorator_ShouldMove_C_PerformConditionCheckAI final
 {
 public:
 	class AAIController*                          OwnerController;                                   // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

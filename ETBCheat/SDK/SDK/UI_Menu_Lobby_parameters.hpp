@@ -16,11 +16,11 @@
 #include "InputCore_structs.hpp"
 #include "S_ConnectedPlayer_structs.hpp"
 #include "ST_UI_Mission_structs.hpp"
+#include "S_Difficulty_structs.hpp"
 #include "E_Difficulty_structs.hpp"
 #include "E_GameMode_structs.hpp"
 #include "AdvancedSessions_structs.hpp"
 #include "Engine_structs.hpp"
-#include "S_Difficulty_structs.hpp"
 
 
 namespace SDK::Params

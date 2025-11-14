@@ -16,7 +16,7 @@ namespace SDK::Params
 
 // Function GrabKeySequence_TPP.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
 // 0x00A0 (0x00A0 - 0x0000)
-struct GrabKeySequence_TPP_SequenceDirector_C_ExecuteUbergraph_SequenceDirector final
+struct SequenceDirector_C_ExecuteUbergraph_SequenceDirector_Grabkey final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

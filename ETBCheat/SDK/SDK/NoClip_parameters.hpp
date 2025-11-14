@@ -16,7 +16,7 @@ namespace SDK::Params
 
 // Function NoClip.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
 // 0x0018 (0x0018 - 0x0000)
-struct NoClip_SequenceDirector_C_ExecuteUbergraph_SequenceDirector final
+struct SequenceDirector_C_ExecuteUbergraph_SequenceDirector_NoClip final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)

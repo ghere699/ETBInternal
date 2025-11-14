@@ -10,6 +10,7 @@ namespace Features
     void UnlockLobbyLimit(); //in development
     void KillAllPlayers();
     void TeleportAllPlayersToMe();
+    void ForceEndLevel();
     void InfiniteStamina(ABPCharacter_Demo_C* PlayerCharacter);
     void InfiniteSanity(ABPCharacter_Demo_C* PlayerCharacter);
     void PlayerFly(ABPCharacter_Demo_C* PlayerCharacter);

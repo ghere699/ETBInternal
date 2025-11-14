@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "SlateCore_structs.hpp"
 #include "ST_UI_Mission_structs.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK::Params

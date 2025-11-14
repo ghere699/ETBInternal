@@ -229,6 +229,33 @@ void Features::TeleportAllPlayersToMe()
 	}
 }
 
+void Features::ForceEndLevel()
+{
+	UWorld* world = Instances::GetWorld();
+	if (!world)
+	{
+		std::cout << "[-] ForceEndLevel failed: World not found." << std::endl;
+		return;
+	}
+
+	AGameModeBase* gameModeBase = world->AuthorityGameMode;
+	if (!gameModeBase)
+	{
+		std::cout << "[-] ForceEndLevel failed: GameMode not found." << std::endl;
+		return;
+	}
+
+	if (gameModeBase->IsA(AMP_GameMode_C::StaticClass()))
+	{
+		AMP_GameMode_C* gameMode = static_cast<AMP_GameMode_C*>(gameModeBase);
+		gameMode->EndGame();
+	}
+	else
+	{
+		std::cout << "[-] ForceEndLevel failed: Current GameMode is not MP_GameMode_C." << std::endl;
+	}
+}
+
 void Features::InfiniteStamina(ABPCharacter_Demo_C* PlayerCharacter)
 {
 	if (!PlayerCharacter) return;

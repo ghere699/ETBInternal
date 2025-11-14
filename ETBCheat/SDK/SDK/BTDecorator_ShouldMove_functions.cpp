@@ -31,7 +31,7 @@ bool BTDecorator_ShouldMove::UBTDecorator_ShouldMove_C::PerformConditionCheckAI(
 	if (Func == nullptr)
 		Func = Class->GetFunction("BTDecorator_ShouldMove_C", "PerformConditionCheckAI");
 
-	Params::BTDecorator_ShouldMove_BTDecorator_ShouldMove_C_PerformConditionCheckAI Parms{};
+	Params::BTDecorator_ShouldMove_C_PerformConditionCheckAI Parms{};
 
 	Parms.OwnerController = OwnerController;
 	Parms.ControlledPawn = ControlledPawn;

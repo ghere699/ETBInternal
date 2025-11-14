@@ -29,7 +29,7 @@ void ClimbSequence::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32
 	if (Func == nullptr)
 		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::ClimbSequence_SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector_ClimbSequence Parms{};
 
 	Parms.EntryPoint = EntryPoint;
 

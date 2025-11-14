@@ -10,8 +10,8 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "EN_ItemRarity_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Backrooms_structs.hpp"
 
 

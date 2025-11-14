@@ -29,7 +29,7 @@ void WaterExit::USequenceDirector_C::ExecuteUbergraph_SequenceDirector(int32 Ent
 	if (Func == nullptr)
 		Func = Class->GetFunction("SequenceDirector_C", "ExecuteUbergraph_SequenceDirector");
 
-	Params::WaterExit_SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
+	Params::SequenceDirector_C_ExecuteUbergraph_SequenceDirector Parms{};
 
 	Parms.EntryPoint = EntryPoint;
 

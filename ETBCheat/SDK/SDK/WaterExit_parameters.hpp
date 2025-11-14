@@ -16,7 +16,7 @@ namespace SDK::Params
 
 // Function WaterExit.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
 // 0x0018 (0x0018 - 0x0000)
-struct WaterExit_SequenceDirector_C_ExecuteUbergraph_SequenceDirector final
+struct SequenceDirector_C_ExecuteUbergraph_SequenceDirector final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -24,7 +24,7 @@ public:
 	class APlayerController*                      CallFunc_GetPlayerController_ReturnValue;          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UFadeOut_UI_C*                          CallFunc_Create_ReturnValue;                       // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-//DUMPER7_ASSERTS_SequenceDirector_C_ExecuteUbergraph_SequenceDirector;
+DUMPER7_ASSERTS_SequenceDirector_C_ExecuteUbergraph_SequenceDirector;
 
 }
 

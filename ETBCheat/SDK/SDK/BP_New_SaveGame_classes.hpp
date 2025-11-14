@@ -15,9 +15,9 @@
 #include "S_LevelStats_structs.hpp"
 #include "S_UploadStatus_structs.hpp"
 #include "E_Difficulty_structs.hpp"
-#include "S_TV_Data_structs.hpp"
-#include "E_Mailbox_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "E_Mailbox_structs.hpp"
+#include "S_TV_Data_structs.hpp"
 #include "Engine_classes.hpp"
 
 

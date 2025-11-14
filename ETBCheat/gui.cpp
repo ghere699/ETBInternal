@@ -73,6 +73,10 @@ void GUI::Render()
 			ImGui::SliderInt("Delay (ms)##ChatSpam", &Features::g_chatSpamDelay, 100, 5000);
 		}
 
+		if (ImGui::Button("Force End Level"))
+		{
+			Features::ForceEndLevel();
+		}
 
 		if (ImGui::Button("Teleport All To Me"))
 		{

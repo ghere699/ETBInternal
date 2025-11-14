@@ -16,12 +16,12 @@ namespace SDK::Params
 
 // Function ClimbLadderSequence.SequenceDirector_C.ExecuteUbergraph_SequenceDirector
 // 0x0004 (0x0004 - 0x0000)
-struct ClimbLadderSequence_SequenceDirector_C_ExecuteUbergraph_SequenceDirector final
+struct SequenceDirector_C_ExecuteUbergraph_SequenceDirector_ClimbLadder final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
-//DUMPER7_ASSERTS_ClimbLadderSequence_SequenceDirector_C_ExecuteUbergraph_SequenceDirector;
+//DUMPER7_ASSERTS_SequenceDirector_C_ExecuteUbergraph_SequenceDirector;
 
 }
 
